@@ -13,7 +13,7 @@ CONNECTION_STRING = "HostName=Trupt.azure-devices.net;DeviceId=mydevice;SharedAc
 
 # Define the JSON message to send to IoT Hub.
 TEMPREATURE = 20.0
-DISTANCE = 100
+DISTANCE = 200
 HUMIDITY = 50
 MSG_TXT = '{{"tempreature": {tempreature},"distance": {distance}, "humidity": {humidity}}}'
 
@@ -43,16 +43,10 @@ def iothub_client_accident_data():
               #message.custom_properties["pressureAlert"] = "false"
 
             # Send the message.
-            if (distance < 120):
-              print("Your Distance very less.... then need to break")
-            elif (distance > 120):
-              if( (tempreature < 20) or (humidity > 70) ):
-                print("Not to good for driving because... not proper visible")
-              else:
-                print( "Sending message: {}".format(message) )
-                client.send_message(message)
-                print ( "Message successfully sent" )
-                time.sleep(3)
+            print( "Sending message: {}".format(message) )
+            client.send_message(message)
+            print ( "Message successfully sent" )
+            time.sleep(3)
 
     except KeyboardInterrupt:
         print ( "IoTHubClient sample stopped" )
@@ -60,4 +54,4 @@ def iothub_client_accident_data():
 if __name__ == '__main__':
     print ( "IoT Hub Quickstart #1 - Simulated device" )
     print ( "Press Ctrl-C to exit" )
-    iothub_client_accident_data()
+    iothub_client_accident_data();

@@ -60,4 +60,4 @@ def iothub_client_accident_data():
 if __name__ == '__main__':
     print ( "IoT Hub Quickstart #1 - Simulated device" )
     print ( "Press Ctrl-C to exit" )
-    iothub_client_accident_data():
+    iothub_client_accident_data()

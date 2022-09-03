@@ -43,10 +43,15 @@ def iothub_client_accident_data():
               #message.custom_properties["pressureAlert"] = "false"
 
             # Send the message.
-            print( "Sending message: {}".format(message) )
-            client.send_message(message)
-            print ( "Message successfully sent" )
-            time.sleep(3)
+            if(distance < 205):
+                print("Other vehicle so near then you need push the break");
+            elif(tempreature < 10):
+                print("Not Safe for Driving for any one");
+            else:
+                print( "Sending message: {}".format(message) )
+                client.send_message(message)
+                print ( "Message successfully sent" )
+                time.sleep(3)
 
     except KeyboardInterrupt:
         print ( "IoTHubClient sample stopped" )

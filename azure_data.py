@@ -43,9 +43,9 @@ def iothub_client_accident_data():
               #message.custom_properties["pressureAlert"] = "false"
 
             # Send the message.
-            if (distance < 150):
+            if (distance < 120):
               print("Your Distance very less.... then need to break")
-            elif (distance > 150):
+            elif (distance > 120):
               if( (tempreature < 20) or (humidity > 70) ):
                 print("Not to good for driving because... not proper visible")
               else:

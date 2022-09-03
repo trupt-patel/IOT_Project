@@ -48,7 +48,7 @@ def iothub_client_accident_data():
             elif (distance > 200):
               if( (tempreature < 20) or (humidity > 70) ):
                 print("Not to good for driving because... not proper visible")
-              else
+              else:
                 print( "Sending message: {}".format(message) )
             client.send_message(message)
             print ( "Message successfully sent" )
